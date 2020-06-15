@@ -15,6 +15,8 @@
 		DCC86A412497E3AA00CBCF93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A3F2497E3AA00CBCF93 /* LaunchScreen.storyboard */; };
 		DCC86A4C2497E3AA00CBCF93 /* IRWeather_ForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A4B2497E3AA00CBCF93 /* IRWeather_ForecastTests.swift */; };
 		DCC86A572497E3AB00CBCF93 /* IRWeather_ForecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A562497E3AB00CBCF93 /* IRWeather_ForecastUITests.swift */; };
+		DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A6B2497E71C00CBCF93 /* GradientView.swift */; };
+		DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		DCC86A522497E3AB00CBCF93 /* IRWeather ForecastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IRWeather ForecastUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC86A562497E3AB00CBCF93 /* IRWeather_ForecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRWeather_ForecastUITests.swift; sourceTree = "<group>"; };
 		DCC86A582497E3AB00CBCF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC86A6B2497E71C00CBCF93 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRBorderButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +103,13 @@
 		DCC86A332497E3A700CBCF93 /* IRWeather Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				DCC86A342497E3A700CBCF93 /* AppDelegate.swift */,
-				DCC86A362497E3A700CBCF93 /* SceneDelegate.swift */,
-				DCC86A382497E3A700CBCF93 /* ViewController.swift */,
-				DCC86A3A2497E3A700CBCF93 /* Main.storyboard */,
-				DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */,
-				DCC86A3F2497E3AA00CBCF93 /* LaunchScreen.storyboard */,
+				DCC86A6A2497E70400CBCF93 /* Utilities */,
+				DCC86A692497E45F00CBCF93 /* Storyboards */,
+				DCC86A682497E44A00CBCF93 /* Startup */,
+				DCC86A672497E41A00CBCF93 /* Extensions */,
+				DCC86A662497E3F500CBCF93 /* Resources */,
+				DCC86A652497E3E400CBCF93 /* Networking */,
+				DCC86A642497E3B300CBCF93 /* Modules */,
 				DCC86A422497E3AA00CBCF93 /* Info.plist */,
 			);
 			path = "IRWeather Forecast";
@@ -126,6 +131,63 @@
 				DCC86A582497E3AB00CBCF93 /* Info.plist */,
 			);
 			path = "IRWeather ForecastUITests";
+			sourceTree = "<group>";
+		};
+		DCC86A642497E3B300CBCF93 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DCC86A652497E3E400CBCF93 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DCC86A662497E3F500CBCF93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DCC86A672497E41A00CBCF93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DCC86A682497E44A00CBCF93 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A362497E3A700CBCF93 /* SceneDelegate.swift */,
+				DCC86A382497E3A700CBCF93 /* ViewController.swift */,
+				DCC86A342497E3A700CBCF93 /* AppDelegate.swift */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+		DCC86A692497E45F00CBCF93 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A3F2497E3AA00CBCF93 /* LaunchScreen.storyboard */,
+				DCC86A3A2497E3A700CBCF93 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DCC86A6A2497E70400CBCF93 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A6B2497E71C00CBCF93 /* GradientView.swift */,
+				DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */,
+				DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */,
 				DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */,
+				DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */,
 				DCC86A372497E3A700CBCF93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
