@@ -17,6 +17,19 @@
 		DCC86A572497E3AB00CBCF93 /* IRWeather_ForecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A562497E3AB00CBCF93 /* IRWeather_ForecastUITests.swift */; };
 		DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A6B2497E71C00CBCF93 /* GradientView.swift */; };
 		DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */; };
+		DCC86A742497F6AF00CBCF93 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A732497F6AF00CBCF93 /* UserLocation.swift */; };
+		DCC86A762497F6D700CBCF93 /* UserLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A752497F6D700CBCF93 /* UserLocationProvider.swift */; };
+		DCC86A782497F6F100CBCF93 /* UserLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A772497F6F100CBCF93 /* UserLocationService.swift */; };
+		DCC86A7A2497F80400CBCF93 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A792497F80400CBCF93 /* LocationProvider.swift */; };
+		DCC86A7D2497FAC200CBCF93 /* LocationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A7C2497FAC200CBCF93 /* LocationMock.swift */; };
+		DCC86A7F2497FB2C00CBCF93 /* UserLocationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A7E2497FB2C00CBCF93 /* UserLocationServiceTest.swift */; };
+		DCC86A832497FB7C00CBCF93 /* LocationProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A822497FB7C00CBCF93 /* LocationProviderMock.swift */; };
+		DCC86A852497FE1000CBCF93 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A842497FE1000CBCF93 /* Endpoint.swift */; };
+		DCC86A872498007100CBCF93 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A862498007100CBCF93 /* NetworkingProtocols.swift */; };
+		DCC86A892498009F00CBCF93 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A882498009F00CBCF93 /* NetworkEngine.swift */; };
+		DCC86A8D2498096800CBCF93 /* WeatherEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A8C2498096800CBCF93 /* WeatherEndpoints.swift */; };
+		DCC86A8F24980D5B00CBCF93 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A8E24980D5B00CBCF93 /* city.list.json */; };
+		DCC86A9124980DA000CBCF93 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A9024980DA000CBCF93 /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,19 @@
 		DCC86A582497E3AB00CBCF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC86A6B2497E71C00CBCF93 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRBorderButton.swift; sourceTree = "<group>"; };
+		DCC86A732497F6AF00CBCF93 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		DCC86A752497F6D700CBCF93 /* UserLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationProvider.swift; sourceTree = "<group>"; };
+		DCC86A772497F6F100CBCF93 /* UserLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationService.swift; sourceTree = "<group>"; };
+		DCC86A792497F80400CBCF93 /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		DCC86A7C2497FAC200CBCF93 /* LocationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMock.swift; sourceTree = "<group>"; };
+		DCC86A7E2497FB2C00CBCF93 /* UserLocationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationServiceTest.swift; sourceTree = "<group>"; };
+		DCC86A822497FB7C00CBCF93 /* LocationProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProviderMock.swift; sourceTree = "<group>"; };
+		DCC86A842497FE1000CBCF93 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DCC86A862498007100CBCF93 /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
+		DCC86A882498009F00CBCF93 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		DCC86A8C2498096800CBCF93 /* WeatherEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoints.swift; sourceTree = "<group>"; };
+		DCC86A8E24980D5B00CBCF93 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		DCC86A9024980DA000CBCF93 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +129,7 @@
 		DCC86A332497E3A700CBCF93 /* IRWeather Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				DCC86A702497F54800CBCF93 /* Location */,
 				DCC86A6A2497E70400CBCF93 /* Utilities */,
 				DCC86A692497E45F00CBCF93 /* Storyboards */,
 				DCC86A682497E44A00CBCF93 /* Startup */,
@@ -118,6 +145,7 @@
 		DCC86A4A2497E3AA00CBCF93 /* IRWeather ForecastTests */ = {
 			isa = PBXGroup;
 			children = (
+				DCC86A7B2497FA1600CBCF93 /* LocationTests */,
 				DCC86A4B2497E3AA00CBCF93 /* IRWeather_ForecastTests.swift */,
 				DCC86A4D2497E3AA00CBCF93 /* Info.plist */,
 			);
@@ -143,6 +171,10 @@
 		DCC86A652497E3E400CBCF93 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DCC86A842497FE1000CBCF93 /* Endpoint.swift */,
+				DCC86A862498007100CBCF93 /* NetworkingProtocols.swift */,
+				DCC86A882498009F00CBCF93 /* NetworkEngine.swift */,
+				DCC86A8C2498096800CBCF93 /* WeatherEndpoints.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -150,7 +182,9 @@
 		DCC86A662497E3F500CBCF93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DCC86A8E24980D5B00CBCF93 /* city.list.json */,
 				DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */,
+				DCC86A9024980DA000CBCF93 /* CityModel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -188,6 +222,27 @@
 				DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DCC86A702497F54800CBCF93 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A732497F6AF00CBCF93 /* UserLocation.swift */,
+				DCC86A752497F6D700CBCF93 /* UserLocationProvider.swift */,
+				DCC86A772497F6F100CBCF93 /* UserLocationService.swift */,
+				DCC86A792497F80400CBCF93 /* LocationProvider.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		DCC86A7B2497FA1600CBCF93 /* LocationTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCC86A7C2497FAC200CBCF93 /* LocationMock.swift */,
+				DCC86A7E2497FB2C00CBCF93 /* UserLocationServiceTest.swift */,
+				DCC86A822497FB7C00CBCF93 /* LocationProviderMock.swift */,
+			);
+			path = LocationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC86A412497E3AA00CBCF93 /* LaunchScreen.storyboard in Resources */,
+				DCC86A8F24980D5B00CBCF93 /* city.list.json in Resources */,
 				DCC86A3E2497E3AA00CBCF93 /* Assets.xcassets in Resources */,
 				DCC86A3C2497E3A700CBCF93 /* Main.storyboard in Resources */,
 			);
@@ -321,11 +377,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC86A762497F6D700CBCF93 /* UserLocationProvider.swift in Sources */,
 				DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */,
+				DCC86A892498009F00CBCF93 /* NetworkEngine.swift in Sources */,
 				DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */,
+				DCC86A8D2498096800CBCF93 /* WeatherEndpoints.swift in Sources */,
+				DCC86A7A2497F80400CBCF93 /* LocationProvider.swift in Sources */,
+				DCC86A9124980DA000CBCF93 /* CityModel.swift in Sources */,
+				DCC86A852497FE1000CBCF93 /* Endpoint.swift in Sources */,
 				DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */,
+				DCC86A742497F6AF00CBCF93 /* UserLocation.swift in Sources */,
+				DCC86A782497F6F100CBCF93 /* UserLocationService.swift in Sources */,
 				DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */,
 				DCC86A372497E3A700CBCF93 /* SceneDelegate.swift in Sources */,
+				DCC86A872498007100CBCF93 /* NetworkingProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +398,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC86A7F2497FB2C00CBCF93 /* UserLocationServiceTest.swift in Sources */,
+				DCC86A7D2497FAC200CBCF93 /* LocationMock.swift in Sources */,
 				DCC86A4C2497E3AA00CBCF93 /* IRWeather_ForecastTests.swift in Sources */,
+				DCC86A832497FB7C00CBCF93 /* LocationProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
