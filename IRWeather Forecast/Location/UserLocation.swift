@@ -12,10 +12,15 @@ import CoreLocation
 typealias Coordinate = CLLocationCoordinate2D
 
 protocol UserLocation {
+    func fetchCity(completion: @escaping (_ city: String?, _ error: Error?) -> ())
     var coordinate: Coordinate { get }
 }
 
-extension CLLocation: UserLocation { }
+extension CLLocation: UserLocation {
+    func fetchCity(completion: @escaping (_ city: String?, _ error: Error?) -> ()) {
+          CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first?.locality, $1) }
+      }
+}
 
 enum UserLocationError: Swift.Error {
     case canNotBeLocated

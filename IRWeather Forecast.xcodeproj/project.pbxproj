@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC8CDDD824988B1200EEFD31 /* Forecast5Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CDDD724988B1200EEFD31 /* Forecast5Response.swift */; };
+		DC8CDDDC24988F6300EEFD31 /* CurrentCityForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CDDDB24988F6300EEFD31 /* CurrentCityForecastViewController.swift */; };
+		DC8CDDDE2498905D00EEFD31 /* LocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CDDDD2498905D00EEFD31 /* LocationExtension.swift */; };
+		DC8CDDE124989A6900EEFD31 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CDDE024989A6900EEFD31 /* NetworkService.swift */; };
 		DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A342497E3A700CBCF93 /* AppDelegate.swift */; };
 		DCC86A372497E3A700CBCF93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A362497E3A700CBCF93 /* SceneDelegate.swift */; };
 		DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A382497E3A700CBCF93 /* ViewController.swift */; };
@@ -30,6 +34,7 @@
 		DCC86A8D2498096800CBCF93 /* WeatherEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A8C2498096800CBCF93 /* WeatherEndpoints.swift */; };
 		DCC86A8F24980D5B00CBCF93 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A8E24980D5B00CBCF93 /* city.list.json */; };
 		DCC86A9124980DA000CBCF93 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A9024980DA000CBCF93 /* CityModel.swift */; };
+		DCC86A9324980F4700CBCF93 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A9224980F4700CBCF93 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC8CDDD724988B1200EEFD31 /* Forecast5Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Response.swift; sourceTree = "<group>"; };
+		DC8CDDDB24988F6300EEFD31 /* CurrentCityForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCityForecastViewController.swift; sourceTree = "<group>"; };
+		DC8CDDDD2498905D00EEFD31 /* LocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtension.swift; sourceTree = "<group>"; };
+		DC8CDDE024989A6900EEFD31 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DCC86A312497E3A700CBCF93 /* IRWeather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IRWeather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC86A342497E3A700CBCF93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCC86A362497E3A700CBCF93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +88,7 @@
 		DCC86A8C2498096800CBCF93 /* WeatherEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoints.swift; sourceTree = "<group>"; };
 		DCC86A8E24980D5B00CBCF93 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		DCC86A9024980DA000CBCF93 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		DCC86A9224980F4700CBCF93 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC8CDDD524988ACC00EEFD31 /* CurrentCityForecast */ = {
+			isa = PBXGroup;
+			children = (
+				DC8CDDDF24989A5700EEFD31 /* Services */,
+				DC8CDDDA24988F2900EEFD31 /* Controllers */,
+				DC8CDDD624988AE400EEFD31 /* Model */,
+			);
+			path = CurrentCityForecast;
+			sourceTree = "<group>";
+		};
+		DC8CDDD624988AE400EEFD31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC8CDDD724988B1200EEFD31 /* Forecast5Response.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC8CDDDA24988F2900EEFD31 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC8CDDDB24988F6300EEFD31 /* CurrentCityForecastViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC8CDDDF24989A5700EEFD31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DC8CDDE024989A6900EEFD31 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DCC86A282497E3A700CBCF93 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +208,7 @@
 		DCC86A642497E3B300CBCF93 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DC8CDDD524988ACC00EEFD31 /* CurrentCityForecast */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -220,6 +265,7 @@
 			children = (
 				DCC86A6B2497E71C00CBCF93 /* GradientView.swift */,
 				DCC86A6D2497E99300CBCF93 /* IRBorderButton.swift */,
+				DCC86A9224980F4700CBCF93 /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -231,6 +277,7 @@
 				DCC86A752497F6D700CBCF93 /* UserLocationProvider.swift */,
 				DCC86A772497F6F100CBCF93 /* UserLocationService.swift */,
 				DCC86A792497F80400CBCF93 /* LocationProvider.swift */,
+				DC8CDDDD2498905D00EEFD31 /* LocationExtension.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -380,6 +427,7 @@
 				DCC86A762497F6D700CBCF93 /* UserLocationProvider.swift in Sources */,
 				DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */,
 				DCC86A892498009F00CBCF93 /* NetworkEngine.swift in Sources */,
+				DCC86A9324980F4700CBCF93 /* Utilities.swift in Sources */,
 				DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */,
 				DCC86A8D2498096800CBCF93 /* WeatherEndpoints.swift in Sources */,
 				DCC86A7A2497F80400CBCF93 /* LocationProvider.swift in Sources */,
@@ -388,8 +436,12 @@
 				DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */,
 				DCC86A742497F6AF00CBCF93 /* UserLocation.swift in Sources */,
 				DCC86A782497F6F100CBCF93 /* UserLocationService.swift in Sources */,
+				DC8CDDDE2498905D00EEFD31 /* LocationExtension.swift in Sources */,
 				DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */,
+				DC8CDDD824988B1200EEFD31 /* Forecast5Response.swift in Sources */,
+				DC8CDDE124989A6900EEFD31 /* NetworkService.swift in Sources */,
 				DCC86A372497E3A700CBCF93 /* SceneDelegate.swift in Sources */,
+				DC8CDDDC24988F6300EEFD31 /* CurrentCityForecastViewController.swift in Sources */,
 				DCC86A872498007100CBCF93 /* NetworkingProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

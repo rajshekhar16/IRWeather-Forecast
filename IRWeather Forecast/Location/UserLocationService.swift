@@ -21,6 +21,9 @@ class UserLocationService: NSObject, UserLocationProvider {
 
     func findUserLocation(then: @escaping UserLocationCompletionBlock) {
         self.locationCompletionBlock = then
+        if let provider = provider as? CLLocationManager {
+            provider.delegate = self
+        }
         if provider.isUserAuthorized {
             provider.requestLocation()
         } else {
@@ -36,6 +39,10 @@ extension UserLocationService: CLLocationManagerDelegate {
             provider.requestLocation()
         }
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error:: \(error.localizedDescription)")
+    }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation()
@@ -45,4 +52,6 @@ extension UserLocationService: CLLocationManagerDelegate {
             locationCompletionBlock?(nil, .canNotBeLocated)
         }
     }
+
+
 }
