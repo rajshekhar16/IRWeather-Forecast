@@ -15,9 +15,14 @@ class ViewController: UIViewController {
         if let conversion = DataConversion(fileName: "city.list", fileExtension: "json") {
            // let daata = conversion.getDataFromFile()
         }
+
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+         self.navigationController?.navigationBar.isHidden = true
+    }
+    
     @IBAction func curretnCityAction(_ sender: Any) {
         let currentCityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentCityForecastViewController") as! CurrentCityForecastViewController
         self.navigationController?.pushViewController(currentCityViewController, animated: true)

@@ -21,6 +21,7 @@ class CurrentCityForecastViewController: UIViewController {
             })
         }
     }
+    var forecastViewModel: ForecastViewModel!
 
     init(locationProvider: UserLocationProvider) {
         self.locationProvider = locationProvider
@@ -35,6 +36,10 @@ class CurrentCityForecastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         requestUserLocation()
+        self.navigationController?.navigationBar.isHidden = false
+        forecastTableView.register(CurrentCityForecastTableViewCell.nib, forCellReuseIdentifier: CurrentCityForecastTableViewCell.identifier)
+                forecastTableView.register(CurrentCityForecastHeaderCell.nib, forCellReuseIdentifier: CurrentCityForecastHeaderCell.identifier)
+
         // Do any additional setup after loading the view.
     }
 
@@ -49,9 +54,60 @@ class CurrentCityForecastViewController: UIViewController {
     }
 
     func fetchForecastData(cityName: String) {
+        self.title = cityName
         let networkEngine = NetworkEngine(with: WeatherEndPoints.getFiveDaysForecast(cityName: cityName))
-        let networkService = NetworkService(networkEngine: networkEngine)
-        networkService.fetchForecastDataForFiveDays()
+        let forecastService = ForecastService(networkEngine: networkEngine)
+        forecastViewModel = ForecastViewModel(forecastService: forecastService, delegate: self)
+        forecastTableView.isHidden = true
+        forecastTableView.dataSource = self
+        forecastTableView.delegate = self
+        forecastViewModel.fetchData()
+    }
+}
+
+extension CurrentCityForecastViewController: ForecastViewModelDelegate {
+
+    func onFetchCompleted() {
+        forecastTableView.isHidden = false
+        forecastTableView.reloadData()
+    }
+
+    func onFetchFailed(with reason: String) {
+
+    }
+}
+
+extension CurrentCityForecastViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return forecastViewModel.presentableData.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return forecastViewModel.presentableData[section].count
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "CurrentCityForecastHeaderCell") as? CurrentCityForecastHeaderCell
+        headerCell?.dayLbl.text = forecastViewModel.presentableData[section][0].day
+        headerCell?.dateLbl.text = forecastViewModel.presentableData[section][0].shortDate
+        return headerCell
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrentCityForecastTableViewCell.identifier, for: indexPath) as? CurrentCityForecastTableViewCell else {
+            fatalError("Unable to dequeue cell")
+        }
+        tableViewCell.presentableData = forecastViewModel.presentableData[indexPath.section][indexPath.row]
+        return tableViewCell
     }
 
 }

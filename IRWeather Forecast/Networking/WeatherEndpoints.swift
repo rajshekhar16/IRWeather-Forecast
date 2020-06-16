@@ -44,7 +44,8 @@ enum WeatherEndPoints: Endpoint {
         switch self {
         case .getFiveDaysForecast(let cityName):
             return [URLQueryItem(name: "q", value: cityName),
-                    URLQueryItem(name: "appid", value: Secrets.appID)
+                    URLQueryItem(name: "appid", value: Secrets.appID),
+                    URLQueryItem(name: "units", value: "metric")
             ]
         case .getForecastOfCities(let cityIDs):
             let cityIDs = cityIDs.joined(separator: ",")

@@ -21,6 +21,7 @@ struct ListData: Decodable {
     let main: MainListData
     let weather: [WeatherData]
     let wind: WindData
+    let dtTxt: String
 }
 
 struct MainListData: Decodable {
@@ -58,3 +59,13 @@ struct CoordinateData: Decodable {
     let lon: Double
 }
 
+struct ForecastPresentableData {
+    var shortDate: String?
+    var day: String?
+    var time: String?
+    var temp: String
+    var humidity: String
+    var weather: String
+    var weatherImgUrl: String
+    var windSpeed: String
+}
