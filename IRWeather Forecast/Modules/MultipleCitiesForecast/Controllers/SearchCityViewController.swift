@@ -73,7 +73,11 @@ class SearchCityViewController: UIViewController {
 
     @IBAction func forecastAction(_ sender: Any) {
         let currentCityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitiesForecastViewController") as! CitiesForecastViewController
-        currentCityViewController.cityModelArr = self.selectedCitiesArr
+        let citiesId = self.selectedCitiesArr.map { (cityModel) -> String in
+            String(cityModel.id)
+        }
+        let networkEngine = NetworkEngine(with: WeatherEndPoints.getForecastOfCities(cityIDs: citiesId))
+        currentCityViewController.citiesForecastService = CitiesForecastService(networkEngine: networkEngine)
         self.navigationController?.pushViewController(currentCityViewController, animated: true)
     }
 }

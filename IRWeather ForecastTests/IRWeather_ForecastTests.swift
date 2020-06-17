@@ -11,24 +11,47 @@ import XCTest
 
 class IRWeather_ForecastTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: ViewController!
+
+    override func setUp() {
+        super.setUp()
+        sut = makeSut()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_Navigate_toCurrrentCityForecastController() {
+        sut.curretnCityAction(self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if let navigationContoller = UIApplication.shared.windows.first,
+                let topViewController = navigationContoller.rootViewController?.children.first {
+                XCTAssertTrue(topViewController.isKind(of:  CurrentCityForecastViewController.self))
+            }
         }
     }
+
+    func test_Navigate_toMultipleCitiesSearchController() {
+          sut.multipleCityAction(self)
+          DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+              if let navigationContoller = UIApplication.shared.windows.first,
+                  let topViewController = navigationContoller.rootViewController?.children.first {
+                  XCTAssertTrue(topViewController.isKind(of:  SearchCityViewController.self))
+              }
+          }
+      }
+
+   // MARK: Helpers
+   func makeSut() -> ViewController? {
+       let storyboard = UIStoryboard(name: "Main",
+                                     bundle: Bundle.main)
+       let sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+       let navigationController = UINavigationController()
+       navigationController.viewControllers = [sut!]
+       let _ = sut!.view
+       return sut
+   }
 
 }

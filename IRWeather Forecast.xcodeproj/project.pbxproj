@@ -61,6 +61,7 @@
 		DCF44E6E2499F9960079E932 /* Forecast5Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF44E6D2499F9950079E932 /* Forecast5Mock.json */; };
 		DCF44E702499FA460079E932 /* UtilitiesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF44E6F2499FA460079E932 /* UtilitiesTestCase.swift */; };
 		DCF44E73249A05CE0079E932 /* Forecast5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF44E72249A05CE0079E932 /* Forecast5Tests.swift */; };
+		DCFECA40249AA18F00D03789 /* CitiesForecastResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = DCFECA3F249AA18F00D03789 /* CitiesForecastResponseMock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		DCF44E6D2499F9950079E932 /* Forecast5Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Forecast5Mock.json; sourceTree = "<group>"; };
 		DCF44E6F2499FA460079E932 /* UtilitiesTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesTestCase.swift; sourceTree = "<group>"; };
 		DCF44E72249A05CE0079E932 /* Forecast5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Tests.swift; sourceTree = "<group>"; };
+		DCFECA3F249AA18F00D03789 /* CitiesForecastResponseMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CitiesForecastResponseMock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 				DCF44E6D2499F9950079E932 /* Forecast5Mock.json */,
 				DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */,
 				DCC86A9024980DA000CBCF93 /* CityModel.swift */,
+				DCFECA3F249AA18F00D03789 /* CitiesForecastResponseMock.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFECA40249AA18F00D03789 /* CitiesForecastResponseMock.json in Resources */,
 				DCD07E1D249A52B8006433B8 /* allCities.json in Resources */,
 				DC0283A7249A426300B831F9 /* city.list.min.json in Resources */,
 				DC55A82E249A57C3004B2FDA /* CustomSearchTableViewCell.xib in Resources */,

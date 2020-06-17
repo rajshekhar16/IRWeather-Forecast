@@ -8,26 +8,84 @@
 
 import XCTest
 
+@testable import IRWeather_Forecast
 class MultipleCitiesForecastTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var sut: CitiesForecastViewController!
+    var forecastServiceMock: CitiesForecastServiceMock!
+
+    override func setUp() {
+        super.setUp()
+        sut = makeSut()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_presentableData_isNotEmpty_afterCallingFetchData() {
+        sut.citiesForecastViewModel.fetchData()
+        XCTAssertNotEqual(sut.citiesForecastViewModel.presentableData.count, 0)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_viewDidLoad_renderPresentableData() {
+        sut.citiesForecastViewModel.fetchData()
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.cityName, "Seattle")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.minTemp, "14.0")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.maxTemp, "17.0")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.windSpeed, "2.1 mph")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.weather, "broken clouds")
     }
 
+    func test_tableView_isNotHidden() {
+         sut.citiesForecastViewModel.fetchData()
+         sut.onFetchCompleted()
+         XCTAssertEqual(sut?.citiesForecastTableView.isHidden, false)
+     }
+
+
+    func test_tableViewCell_rendersForecastOptionInCell() {
+        sut.citiesForecastViewModel.fetchData()
+        sut.setupTableView()
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut?.citiesForecastTableView.dataSource?.tableView(sut!.citiesForecastTableView,
+                                                               cellForRowAt: indexPath) as? CityWeatherForecastTableViewCell
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.cityLbl.text, "Seattle")
+        XCTAssertEqual(cell?.minTempLbl.text, "Min Temp: 14.0°")
+        XCTAssertEqual(cell?.maxTempLbl.text, "Max Temp: 17.0°")
+        XCTAssertEqual(cell?.windSpeedLbl.text, "2.1 mph")
+        XCTAssertEqual(cell?.weatherDesc.text, "broken clouds".localizedCapitalized)
+    }
+//
+    func test_tableViewCell_allOutletsAreResetInPrepareForeReuse() {
+        sut.citiesForecastViewModel.fetchData()
+        sut.setupTableView()
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut?.citiesForecastTableView.dataSource?.tableView(sut!.citiesForecastTableView,
+                                                               cellForRowAt: indexPath) as? CityWeatherForecastTableViewCell
+        cell?.prepareForReuse()
+        XCTAssertNotNil(cell)
+        XCTAssertNil(cell?.cityLbl.text)
+        XCTAssertNil(cell?.minTempLbl.text)
+        XCTAssertNil(cell?.maxTempLbl.text)
+        XCTAssertNil(cell?.windSpeedLbl.text)
+        XCTAssertNil(cell?.weatherDesc.text)
+    }
+
+    // MARK: Helpers
+       func makeSut() -> CitiesForecastViewController? {
+           let storyboard = UIStoryboard(name: "Main",
+                                         bundle: Bundle.main)
+           let sut = storyboard.instantiateViewController(withIdentifier: "CitiesForecastViewController") as? CitiesForecastViewController
+           forecastServiceMock = CitiesForecastServiceMock()
+           sut?.citiesForecastViewModel = CitiesForecastViewModel(cityNetworkServiceService: forecastServiceMock, delegate: nil)
+           sut?.citiesForecastService = forecastServiceMock
+           let navigationController = UINavigationController()
+           navigationController.viewControllers = [sut!]
+           let _ = sut!.view
+           return sut
+       }
 }
+

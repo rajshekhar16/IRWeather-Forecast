@@ -12,23 +12,17 @@ class CitiesForecastViewController: UIViewController {
 
     @IBOutlet weak var citiesForecastTableView: UITableView!
     var citiesForecastViewModel: CitiesForecastViewModel!
-    var cityModelArr: [CityModel] = []
+    var citiesForecastService: CitiesServiceProtocol!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Weather Forecast"
         fetchWeatherReport()
-        // Do any additional setup after loading the view.
     }
 
     func fetchWeatherReport() {
-        let citiesId = self.cityModelArr.map { (cityModel) -> String in
-            String(cityModel.id)
-        }
-        let networkEngine = NetworkEngine(with: WeatherEndPoints.getForecastOfCities(cityIDs: citiesId))
-        let citiesForecastService = CitiesForecastService(networkEngine: networkEngine)
         citiesForecastViewModel = CitiesForecastViewModel(cityNetworkServiceService: citiesForecastService, delegate: self)
         citiesForecastViewModel.fetchData()
-
     }
 
     func setupTableView() {

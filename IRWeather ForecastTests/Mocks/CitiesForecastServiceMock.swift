@@ -33,7 +33,7 @@ extension CitiesForecastServiceMock: CitiesServiceProtocol {
         if shouldReturnError {
             completionHandler(nil, "Error in fetching data")
         } else {
-            if let dataConversionObj = DataConversion(fileName: "Forecast5Mock", fileExtension: "json") {
+            if let dataConversionObj = DataConversion(fileName: "CitiesForecastResponseMock", fileExtension: "json") {
                 let data = dataConversionObj.getDataFromFile()
                 let forecastResponse: CitiesForecastResponse? = try? dataConversionObj.decodeData(data: data)
                 completionHandler(forecastResponse,  nil)

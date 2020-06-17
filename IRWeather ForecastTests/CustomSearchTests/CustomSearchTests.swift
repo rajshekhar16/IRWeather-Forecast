@@ -124,6 +124,16 @@ class CustomSearchTests: XCTestCase {
         XCTAssertEqual(sut.searchTextField.isEnabled, false)
     }
 
+    func test_Navigate_toNextViewController() {
+        sut.forecastAction(self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            if let navigationContoller = UIApplication.shared.windows.first,
+                let topViewController = navigationContoller.rootViewController?.children.first {
+                XCTAssertTrue(topViewController.isKind(of:  CitiesForecastViewController.self))
+            }
+        }
+    }
+
     // MARK: Helpers
     func makeSut() -> SearchCityViewController? {
         let storyboard = UIStoryboard(name: "Main",
