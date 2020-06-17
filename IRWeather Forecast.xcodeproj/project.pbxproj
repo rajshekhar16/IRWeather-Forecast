@@ -11,6 +11,14 @@
 		DC55A82D249A57C3004B2FDA /* CustomSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A82B249A57C3004B2FDA /* CustomSearchTableViewCell.swift */; };
 		DC55A82E249A57C3004B2FDA /* CustomSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC55A82C249A57C3004B2FDA /* CustomSearchTableViewCell.xib */; };
 		DC55A832249A5D46004B2FDA /* CustomSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A831249A5D46004B2FDA /* CustomSearchTests.swift */; };
+		DC55A834249A7605004B2FDA /* CitiesForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A833249A7605004B2FDA /* CitiesForecastViewController.swift */; };
+		DC55A837249A76E0004B2FDA /* CityWeatherForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A835249A76E0004B2FDA /* CityWeatherForecastTableViewCell.swift */; };
+		DC55A838249A76E0004B2FDA /* CityWeatherForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC55A836249A76E0004B2FDA /* CityWeatherForecastTableViewCell.xib */; };
+		DC55A83B249A7796004B2FDA /* CitiesForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A83A249A7796004B2FDA /* CitiesForecastResponse.swift */; };
+		DC55A83E249A786A004B2FDA /* CitiesForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A83D249A786A004B2FDA /* CitiesForecastViewModel.swift */; };
+		DC55A841249A78F4004B2FDA /* CitiesForecastNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A840249A78F4004B2FDA /* CitiesForecastNetworkService.swift */; };
+		DC55A844249A9A3F004B2FDA /* CitiesForecastServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A843249A9A3F004B2FDA /* CitiesForecastServiceMock.swift */; };
+		DC55A848249A9B8B004B2FDA /* MultipleCitiesForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A847249A9B8B004B2FDA /* MultipleCitiesForecastTests.swift */; };
 		DC5C40CF2499ECDC00251BA9 /* DateUtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C40CE2499ECDC00251BA9 /* DateUtilitiesTest.swift */; };
 		DC7B17CC249A3C0000DB1DBB /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B17CB249A3C0000DB1DBB /* CustomSearchTextField.swift */; };
 		DC7B17CF249A3EDC00DB1DBB /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B17CE249A3EDC00DB1DBB /* SearchCityViewController.swift */; };
@@ -77,6 +85,14 @@
 		DC55A82B249A57C3004B2FDA /* CustomSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTableViewCell.swift; sourceTree = "<group>"; };
 		DC55A82C249A57C3004B2FDA /* CustomSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSearchTableViewCell.xib; sourceTree = "<group>"; };
 		DC55A831249A5D46004B2FDA /* CustomSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTests.swift; sourceTree = "<group>"; };
+		DC55A833249A7605004B2FDA /* CitiesForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForecastViewController.swift; sourceTree = "<group>"; };
+		DC55A835249A76E0004B2FDA /* CityWeatherForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherForecastTableViewCell.swift; sourceTree = "<group>"; };
+		DC55A836249A76E0004B2FDA /* CityWeatherForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityWeatherForecastTableViewCell.xib; sourceTree = "<group>"; };
+		DC55A83A249A7796004B2FDA /* CitiesForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForecastResponse.swift; sourceTree = "<group>"; };
+		DC55A83D249A786A004B2FDA /* CitiesForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForecastViewModel.swift; sourceTree = "<group>"; };
+		DC55A840249A78F4004B2FDA /* CitiesForecastNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForecastNetworkService.swift; sourceTree = "<group>"; };
+		DC55A843249A9A3F004B2FDA /* CitiesForecastServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesForecastServiceMock.swift; sourceTree = "<group>"; };
+		DC55A847249A9B8B004B2FDA /* MultipleCitiesForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCitiesForecastTests.swift; sourceTree = "<group>"; };
 		DC5C40CE2499ECDC00251BA9 /* DateUtilitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilitiesTest.swift; sourceTree = "<group>"; };
 		DC7B17CB249A3C0000DB1DBB /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		DC7B17CE249A3EDC00DB1DBB /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +176,38 @@
 			path = CustomSearchTests;
 			sourceTree = "<group>";
 		};
+		DC55A839249A7781004B2FDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC55A83A249A7796004B2FDA /* CitiesForecastResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC55A83C249A7848004B2FDA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC55A83D249A786A004B2FDA /* CitiesForecastViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DC55A83F249A78C7004B2FDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DC55A840249A78F4004B2FDA /* CitiesForecastNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DC55A842249A9A11004B2FDA /* MultipleCitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC55A847249A9B8B004B2FDA /* MultipleCitiesForecastTests.swift */,
+			);
+			path = MultipleCitiesTests;
+			sourceTree = "<group>";
+		};
 		DC5C40CD2499ECB900251BA9 /* DateUtilitiesTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +219,9 @@
 		DC7B17C9249A3BD100DB1DBB /* MultipleCitiesForecast */ = {
 			isa = PBXGroup;
 			children = (
+				DC55A83F249A78C7004B2FDA /* Services */,
+				DC55A83C249A7848004B2FDA /* ViewModel */,
+				DC55A839249A7781004B2FDA /* Model */,
 				DC7B17CD249A3EB100DB1DBB /* Controllers */,
 				DC7B17CA249A3BE400DB1DBB /* Views */,
 			);
@@ -183,6 +234,8 @@
 				DC7B17CB249A3C0000DB1DBB /* CustomSearchTextField.swift */,
 				DC55A82B249A57C3004B2FDA /* CustomSearchTableViewCell.swift */,
 				DC55A82C249A57C3004B2FDA /* CustomSearchTableViewCell.xib */,
+				DC55A835249A76E0004B2FDA /* CityWeatherForecastTableViewCell.swift */,
+				DC55A836249A76E0004B2FDA /* CityWeatherForecastTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				DC7B17CE249A3EDC00DB1DBB /* SearchCityViewController.swift */,
+				DC55A833249A7605004B2FDA /* CitiesForecastViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +343,7 @@
 		DCC86A4A2497E3AA00CBCF93 /* IRWeather ForecastTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC55A842249A9A11004B2FDA /* MultipleCitiesTests */,
 				DC55A830249A5D29004B2FDA /* CustomSearchTests */,
 				DCF44E71249A05A40079E932 /* Forecast5Tests */,
 				DCF44E6A2499F6970079E932 /* Mocks */,
@@ -406,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				DCF44E6B2499F6B80079E932 /* ForecastServiceMock.swift */,
+				DC55A843249A9A3F004B2FDA /* CitiesForecastServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -529,6 +585,7 @@
 				DC8CDDEB2498DE7200EEFD31 /* CurrentCityForecastTableViewCell.xib in Resources */,
 				DCF44E6E2499F9960079E932 /* Forecast5Mock.json in Resources */,
 				DCC86A3E2497E3AA00CBCF93 /* Assets.xcassets in Resources */,
+				DC55A838249A76E0004B2FDA /* CityWeatherForecastTableViewCell.xib in Resources */,
 				DCD07E1F249A5369006433B8 /* current.city.list.min.json in Resources */,
 				DC8CDDF1249906DA00EEFD31 /* CurrentCityForecastHeaderCell.xib in Resources */,
 				DCC86A3C2497E3A700CBCF93 /* Main.storyboard in Resources */,
@@ -574,12 +631,17 @@
 				DC8CDDF0249906DA00EEFD31 /* CurrentCityForecastHeaderCell.swift in Sources */,
 				DC7B17CF249A3EDC00DB1DBB /* SearchCityViewController.swift in Sources */,
 				DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */,
+				DC55A841249A78F4004B2FDA /* CitiesForecastNetworkService.swift in Sources */,
+				DC55A83B249A7796004B2FDA /* CitiesForecastResponse.swift in Sources */,
 				DCC86A742497F6AF00CBCF93 /* UserLocation.swift in Sources */,
+				DC55A837249A76E0004B2FDA /* CityWeatherForecastTableViewCell.swift in Sources */,
 				DCC86A782497F6F100CBCF93 /* UserLocationService.swift in Sources */,
 				DCC86A6C2497E71C00CBCF93 /* GradientView.swift in Sources */,
+				DC55A83E249A786A004B2FDA /* CitiesForecastViewModel.swift in Sources */,
 				DC8CDDD824988B1200EEFD31 /* Forecast5Response.swift in Sources */,
 				DC8CDDE124989A6900EEFD31 /* ForecastService.swift in Sources */,
 				DC8CDDDC24988F6300EEFD31 /* CurrentCityForecastViewController.swift in Sources */,
+				DC55A834249A7605004B2FDA /* CitiesForecastViewController.swift in Sources */,
 				DCC86A872498007100CBCF93 /* NetworkingProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +650,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC55A844249A9A3F004B2FDA /* CitiesForecastServiceMock.swift in Sources */,
+				DC55A848249A9B8B004B2FDA /* MultipleCitiesForecastTests.swift in Sources */,
 				DCF44E73249A05CE0079E932 /* Forecast5Tests.swift in Sources */,
 				DC8CDDF32499DC0700EEFD31 /* CurrentCityForecastTests.swift in Sources */,
 				DCC86A7F2497FB2C00CBCF93 /* UserLocationServiceTest.swift in Sources */,
@@ -764,6 +828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "IRWeather Forecast/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,6 +846,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "IRWeather Forecast/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

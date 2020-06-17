@@ -8,6 +8,8 @@
 
 import Foundation
 
+let imgUrlStr = "https://openweathermap.org/img/w/"
+
 enum Secrets {
     static let appID = "cbba9042ec2fa0e8c10b94bcecc4e58b"
 }
@@ -50,7 +52,8 @@ enum WeatherEndPoints: Endpoint {
         case .getForecastOfCities(let cityIDs):
             let cityIDs = cityIDs.joined(separator: ",")
             return [URLQueryItem(name: "id", value: cityIDs),
-                    URLQueryItem(name: "appid", value: Secrets.appID)
+                    URLQueryItem(name: "appid", value: Secrets.appID),
+                    URLQueryItem(name: "units", value: "metric")
             ]
         }
     }

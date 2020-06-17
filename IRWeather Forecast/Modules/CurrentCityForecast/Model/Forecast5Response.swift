@@ -41,7 +41,7 @@ struct WeatherData: Decodable {
 
 struct WindData: Decodable {
     let speed: Double
-    let deg: Int
+    let deg: Int?
 }
 
 struct CityData: Decodable {
@@ -64,6 +64,16 @@ struct ForecastPresentableData {
     var day: String?
     var time: String?
     var temp: String
+    var humidity: String
+    var weather: String
+    var weatherImgUrl: String
+    var windSpeed: String
+}
+
+struct CitiesForecastPresentableData {
+    var cityName: String
+    var maxTemp: String
+    var minTemp: String
     var humidity: String
     var weather: String
     var weatherImgUrl: String

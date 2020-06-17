@@ -13,6 +13,7 @@ class CurrentCityForecastViewController: UIViewController {
 
     @IBOutlet weak var forecastTableView: UITableView!
     var locationProvider: UserLocationProvider = UserLocationService(with: CLLocationManager())
+    @IBOutlet weak var acitivtyIndicator: UIActivityIndicatorView!
     var userLocation: UserLocation? {
         didSet {
             userLocation?.fetchCity(completion: { [weak self] (cityName, error) in
@@ -25,10 +26,10 @@ class CurrentCityForecastViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        acitivtyIndicator.center = self.view.center
         requestUserLocation()
         self.navigationController?.navigationBar.isHidden = false
-
-
+        acitivtyIndicator.startAnimating()
         // Do any additional setup after loading the view.
     }
 
@@ -63,6 +64,8 @@ class CurrentCityForecastViewController: UIViewController {
 extension CurrentCityForecastViewController: ForecastViewModelDelegate {
 
     func onFetchCompleted() {
+        acitivtyIndicator.stopAnimating()
+
         forecastTableView.isHidden = false
         forecastTableView.reloadData()
     }

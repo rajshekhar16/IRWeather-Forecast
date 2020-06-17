@@ -13,8 +13,6 @@ protocol ForecastViewModelDelegate: class {
   func onFetchFailed(with reason: String)
 }
 
-let urlStr = "https://openweathermap.org/img/w/"
-
 final class ForecastViewModel {
 
     weak var delegate: ForecastViewModelDelegate?
@@ -44,7 +42,7 @@ final class ForecastViewModel {
                                                                                             temp: "\(Int(round(value.main.temp)))",
                         humidity: "\(value.main.humidity)",
                         weather: value.weather.first!.description,
-                        weatherImgUrl: "\(urlStr)\(value.weather.first!.icon).png",
+                        weatherImgUrl: "\(imgUrlStr)\(value.weather.first!.icon).png",
                         windSpeed: "\(value.wind.speed)")
                     presentableArr.append(presentableData!)
                     date = nil

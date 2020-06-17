@@ -13,14 +13,19 @@ class SearchCityViewController: UIViewController {
     @IBOutlet weak var searchTextField: CustomSearchTextField!
     @IBOutlet weak var forecastButton: IRBorderButton!
     @IBOutlet weak var selectedCitiesTableView: UITableView!
+    private var rightBarButtonItem = UIBarButtonItem()
     var selectedCitiesArr: [CityModel] = [] {
         didSet  {
             let arrCount = selectedCitiesArr.count
             if arrCount > 0 {
+                navigationItem.rightBarButtonItem?.isEnabled = true
                 selectedCitiesTableView.isHidden = false
                 selectedCitiesTableView.reloadData()
+            } else {
+                navigationItem.rightBarButtonItem?.isEnabled = false
+                selectedCitiesTableView.isHidden = true
             }
-            if arrCount > 7 {
+            if arrCount >= 7 {
                 searchTextField.isEnabled = false
             } else if arrCount < 3 {
                 isButtonEnabled = false
@@ -30,7 +35,7 @@ class SearchCityViewController: UIViewController {
         }
     }
     
-    var isButtonEnabled: Bool = false {
+    private var isButtonEnabled: Bool = false {
         didSet {
             if isButtonEnabled {
                 forecastButton.isEnabled = true
@@ -44,19 +49,32 @@ class SearchCityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedCitiesTableView.register(CustomSearchTableViewCell.nib, forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
+        setupNavigationView()
         forecastButton.isEnabled = false
         searchTextField.customDelegate = self
         selectedCitiesTableView.dataSource = self
         forecastButton.backgroundColor = UIColor.darkGray
-        self.navigationController?.navigationBar.isHidden = false
-        self.title = "Search Cities"
         // Do any additional setup after loading the view.
     }
 
+    private func setupNavigationView() {
+        self.navigationController?.navigationBar.isHidden = false
+        self.title = "Search Cities"
+        rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetTapped))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        selectedCitiesTableView.register(CustomSearchTableViewCell.nib, forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
+        navigationItem.rightBarButtonItem?.isEnabled = false
+
+    }
+
+    @objc func resetTapped() {
+        selectedCitiesArr.removeAll(keepingCapacity: true)
+    }
 
     @IBAction func forecastAction(_ sender: Any) {
-
+        let currentCityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitiesForecastViewController") as! CitiesForecastViewController
+        currentCityViewController.cityModelArr = self.selectedCitiesArr
+        self.navigationController?.pushViewController(currentCityViewController, animated: true)
     }
 }
 

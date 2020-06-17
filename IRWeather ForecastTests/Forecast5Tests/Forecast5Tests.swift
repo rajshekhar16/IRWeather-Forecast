@@ -59,8 +59,8 @@ class Forecast5Tests: XCTestCase {
                                                                cellForRowAt: indexPath) as? CurrentCityForecastTableViewCell
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.timeLbl.text, "8:30 PM")
-        XCTAssertEqual(cell?.tempLbl.text, "285")
-        XCTAssertEqual(cell?.humidityLbl.text, "90")
+        XCTAssertEqual(cell?.tempLbl.text, "285°")
+        XCTAssertEqual(cell?.humidityLbl.text, "90%")
         XCTAssertEqual(cell?.weatherDesc.text, "overcast clouds".localizedCapitalized)
     }
 

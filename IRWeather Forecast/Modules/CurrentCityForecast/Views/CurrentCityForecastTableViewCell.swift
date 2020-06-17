@@ -39,8 +39,8 @@ class CurrentCityForecastTableViewCell: UITableViewCell {
     var presentableData: ForecastPresentableData? {
         didSet {
             timeLbl.text = presentableData?.time
-            tempLbl.text = presentableData?.temp
-            humidityLbl.text = presentableData?.humidity
+            tempLbl.text = "\(presentableData?.temp ?? "")°"
+            humidityLbl.text = "\(presentableData?.humidity ?? "")%"
             weatherDesc.text = presentableData?.weather.localizedCapitalized
             weatherImg.loadThumbImageUsingCacheWithUrlString(presentableData?.weatherImgUrl ?? "")
         }
