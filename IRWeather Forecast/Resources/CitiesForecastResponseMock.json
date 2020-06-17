@@ -1,0 +1,110 @@
+{
+    "cnt": 3,
+    "list": [{
+        "coord": {
+            "lon": -122.33,
+            "lat": 47.61
+        },
+        "sys": {
+            "country": "US",
+            "timezone": -25200,
+            "sunrise": 1592395863,
+            "sunset": 1592453385
+        },
+        "weather": [{
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+        }],
+        "main": {
+            "temp": 15.81,
+            "feels_like": 14.6,
+            "temp_min": 14.44,
+            "temp_max": 17.22,
+            "pressure": 1026,
+            "humidity": 72
+        },
+        "visibility": 16093,
+        "wind": {
+            "speed": 2.1
+        },
+        "clouds": {
+            "all": 75
+        },
+        "dt": 1592414176,
+        "id": 5809844,
+        "name": "Seattle"
+    }, {
+        "coord": {
+            "lon": -122.66,
+            "lat": 45.64
+        },
+        "sys": {
+            "country": "US",
+            "timezone": -25200,
+            "sunrise": 1592396451,
+            "sunset": 1592452956
+        },
+        "weather": [{
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03d"
+        }],
+        "main": {
+            "temp": 14.71,
+            "feels_like": 13.35,
+            "temp_min": 13,
+            "temp_max": 16.11,
+            "pressure": 1026,
+            "humidity": 67
+        },
+        "visibility": 16093,
+        "wind": {
+            "speed": 1.5
+        },
+        "clouds": {
+            "all": 40
+        },
+        "dt": 1592414176,
+        "id": 5814616,
+        "name": "Vancouver"
+    }, {
+        "coord": {
+            "lon": 77.68,
+            "lat": 28.92
+        },
+        "sys": {
+            "country": "IN",
+            "timezone": 19800,
+            "sunrise": 1592351441,
+            "sunset": 1592401789
+        },
+        "weather": [{
+            "id": 721,
+            "main": "Haze",
+            "description": "haze",
+            "icon": "50n"
+        }],
+        "main": {
+            "temp": 35,
+            "feels_like": 37.93,
+            "temp_min": 35,
+            "temp_max": 35,
+            "pressure": 997,
+            "humidity": 53
+        },
+        "visibility": 4000,
+        "wind": {
+            "speed": 4.1,
+            "deg": 100
+        },
+        "clouds": {
+            "all": 0
+        },
+        "dt": 1592413536,
+        "id": 1263215,
+        "name": "Meerut"
+    }]
+}
