@@ -23,22 +23,11 @@ class CurrentCityForecastViewController: UIViewController {
     }
     var forecastViewModel: ForecastViewModel!
 
-    init(locationProvider: UserLocationProvider) {
-        self.locationProvider = locationProvider
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-       // fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         requestUserLocation()
         self.navigationController?.navigationBar.isHidden = false
-        forecastTableView.register(CurrentCityForecastTableViewCell.nib, forCellReuseIdentifier: CurrentCityForecastTableViewCell.identifier)
-                forecastTableView.register(CurrentCityForecastHeaderCell.nib, forCellReuseIdentifier: CurrentCityForecastHeaderCell.identifier)
+
 
         // Do any additional setup after loading the view.
     }
@@ -58,10 +47,16 @@ class CurrentCityForecastViewController: UIViewController {
         let networkEngine = NetworkEngine(with: WeatherEndPoints.getFiveDaysForecast(cityName: cityName))
         let forecastService = ForecastService(networkEngine: networkEngine)
         forecastViewModel = ForecastViewModel(forecastService: forecastService, delegate: self)
+        setupTableView()
+        forecastViewModel.fetchData()
+    }
+
+    func setupTableView() {
+        forecastTableView.register(CurrentCityForecastTableViewCell.nib, forCellReuseIdentifier: CurrentCityForecastTableViewCell.identifier)
+        forecastTableView.register(CurrentCityForecastHeaderCell.nib, forCellReuseIdentifier: CurrentCityForecastHeaderCell.identifier)
         forecastTableView.isHidden = true
         forecastTableView.dataSource = self
         forecastTableView.delegate = self
-        forecastViewModel.fetchData()
     }
 }
 

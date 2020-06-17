@@ -30,6 +30,17 @@ class DataConversion {
     }
 }
 
+extension DataConversion {
+
+    func decodeData<T: Decodable>(data: Data?) throws -> T {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try decoder.decode(T.self, from: data!)
+    }
+}
+
+
+
 
 
 //DispatchQueue.main.async {

@@ -10,6 +10,10 @@ import Foundation
 @testable import IRWeather_Forecast
 
 struct UserLocationMock: UserLocation {
+    func fetchCity(completion: @escaping (String?, Error?) -> ()) {
+        completion("Bengaluru", nil)
+    }
+
     var coordinate: Coordinate {
         return Coordinate(latitude: 51.509865, longitude: -0.118092)
     }

@@ -9,7 +9,6 @@
 import Foundation
 
 protocol ForecastServiceProtocol {
-    var networkEngine: NetworkEngine { get }
     func fetchForecastDataForFiveDays(completionHandler: @escaping (Forecast5Response?, String?) -> Void)
 }
 
