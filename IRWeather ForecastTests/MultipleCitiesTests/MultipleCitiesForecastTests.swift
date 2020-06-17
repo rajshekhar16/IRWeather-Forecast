@@ -32,8 +32,8 @@ class MultipleCitiesForecastTests: XCTestCase {
     func test_viewDidLoad_renderPresentableData() {
         sut.citiesForecastViewModel.fetchData()
         XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.cityName, "Seattle")
-        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.minTemp, "14.0")
-        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.maxTemp, "17.0")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.minTemp, "14")
+        XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.maxTemp, "17")
         XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.windSpeed, "2.1 mph")
         XCTAssertEqual(sut.citiesForecastViewModel.presentableData.first?.weather, "broken clouds")
     }
@@ -53,8 +53,8 @@ class MultipleCitiesForecastTests: XCTestCase {
                                                                cellForRowAt: indexPath) as? CityWeatherForecastTableViewCell
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.cityLbl.text, "Seattle")
-        XCTAssertEqual(cell?.minTempLbl.text, "Min Temp: 14.0°")
-        XCTAssertEqual(cell?.maxTempLbl.text, "Max Temp: 17.0°")
+        XCTAssertEqual(cell?.minTempLbl.text, "Min Temp: 14°")
+        XCTAssertEqual(cell?.maxTempLbl.text, "Max Temp: 17°")
         XCTAssertEqual(cell?.windSpeedLbl.text, "2.1 mph")
         XCTAssertEqual(cell?.weatherDesc.text, "broken clouds".localizedCapitalized)
     }

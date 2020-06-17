@@ -10,10 +10,14 @@ import UIKit
 
 var cityModelArray: [CityModel] = []
 
-class ViewController: UIViewController {
+class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fillCitiesData()
+    }
+
+    private func fillCitiesData() {
         if let conversion = DataConversion(fileName: "city.list.min", fileExtension: "json") {
             DispatchQueue.global().async {
                 guard let data = conversion.getDataFromFile() else { return }
@@ -24,11 +28,10 @@ class ViewController: UIViewController {
                 }
             }
         }
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
-         self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func curretnCityAction(_ sender: Any) {

@@ -11,7 +11,7 @@ import XCTest
 
 class IRWeather_ForecastTests: XCTestCase {
 
-    var sut: ViewController!
+    var sut: LandingPageViewController!
 
     override func setUp() {
         super.setUp()
@@ -44,10 +44,10 @@ class IRWeather_ForecastTests: XCTestCase {
       }
 
    // MARK: Helpers
-   func makeSut() -> ViewController? {
+   func makeSut() -> LandingPageViewController? {
        let storyboard = UIStoryboard(name: "Main",
                                      bundle: Bundle.main)
-       let sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+       let sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? LandingPageViewController
        let navigationController = UINavigationController()
        navigationController.viewControllers = [sut!]
        let _ = sut!.view

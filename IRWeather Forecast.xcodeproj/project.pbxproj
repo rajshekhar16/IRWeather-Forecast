@@ -34,7 +34,7 @@
 		DC8CDDF1249906DA00EEFD31 /* CurrentCityForecastHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8CDDEF249906DA00EEFD31 /* CurrentCityForecastHeaderCell.xib */; };
 		DC8CDDF32499DC0700EEFD31 /* CurrentCityForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CDDF22499DC0700EEFD31 /* CurrentCityForecastTests.swift */; };
 		DCC86A352497E3A700CBCF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A342497E3A700CBCF93 /* AppDelegate.swift */; };
-		DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A382497E3A700CBCF93 /* ViewController.swift */; };
+		DCC86A392497E3A700CBCF93 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC86A382497E3A700CBCF93 /* LandingPageViewController.swift */; };
 		DCC86A3C2497E3A700CBCF93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A3A2497E3A700CBCF93 /* Main.storyboard */; };
 		DCC86A3E2497E3AA00CBCF93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */; };
 		DCC86A412497E3AA00CBCF93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC86A3F2497E3AA00CBCF93 /* LaunchScreen.storyboard */; };
@@ -110,7 +110,7 @@
 		DC8CDDF22499DC0700EEFD31 /* CurrentCityForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCityForecastTests.swift; sourceTree = "<group>"; };
 		DCC86A312497E3A700CBCF93 /* IRWeather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IRWeather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC86A342497E3A700CBCF93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCC86A382497E3A700CBCF93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCC86A382497E3A700CBCF93 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		DCC86A3B2497E3A700CBCF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCC86A3D2497E3AA00CBCF93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC86A402497E3AA00CBCF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -412,7 +412,7 @@
 		DCC86A682497E44A00CBCF93 /* Startup */ = {
 			isa = PBXGroup;
 			children = (
-				DCC86A382497E3A700CBCF93 /* ViewController.swift */,
+				DCC86A382497E3A700CBCF93 /* LandingPageViewController.swift */,
 				DCC86A342497E3A700CBCF93 /* AppDelegate.swift */,
 			);
 			path = Startup;
@@ -621,7 +621,7 @@
 				DC8CDDEA2498DE7200EEFD31 /* CurrentCityForecastTableViewCell.swift in Sources */,
 				DCC86A762497F6D700CBCF93 /* UserLocationProvider.swift in Sources */,
 				DC8CDDED2498F08C00EEFD31 /* IRExtensions.swift in Sources */,
-				DCC86A392497E3A700CBCF93 /* ViewController.swift in Sources */,
+				DCC86A392497E3A700CBCF93 /* LandingPageViewController.swift in Sources */,
 				DCC86A892498009F00CBCF93 /* NetworkEngine.swift in Sources */,
 				DCC86A9324980F4700CBCF93 /* Utilities.swift in Sources */,
 				DCC86A6E2497E99300CBCF93 /* IRBorderButton.swift in Sources */,
