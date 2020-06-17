@@ -11,12 +11,7 @@ import Foundation
 struct CityModel: Decodable {
     var id: Int
     var name: String
-    var state: String
     var country: String
-    var coord: Coord
 }
 
-struct Coord: Decodable {
-    let lon: Double
-    let lat: Double
-}
+

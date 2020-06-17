@@ -32,6 +32,9 @@
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="multipleCityAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjw-J2-zY2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-ID-w1u" customClass="IRBorderButton" customModule="IRWeather_Forecast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="61" width="382" height="50"/>
@@ -119,6 +122,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tt5-nH-q6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1804.3478260869567" y="135.9375"/>
+        </scene>
+        <!--Search City View Controller-->
+        <scene sceneID="J3z-kM-SHQ">
+            <objects>
+                <viewController storyboardIdentifier="SearchCityViewController" id="4VL-cI-TfY" customClass="SearchCityViewController" customModule="IRWeather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CKx-dC-gmF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Cities" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5V-oR-yJb" customClass="CustomSearchTextField" customModule="IRWeather_Forecast" customModuleProvider="target">
+                                <rect key="frame" x="16" y="60" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jFw-DL-5AQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select at least 3 cities to get the weather forecast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8u-jR-Pdd">
+                                <rect key="frame" x="16" y="427.5" width="382" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvU-D9-wst" customClass="IRBorderButton" customModule="IRWeather_Forecast" customModuleProvider="target">
+                                <rect key="frame" x="16" y="796" width="382" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.67060786900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hjr-IL-U62"/>
+                                </constraints>
+                                <state key="normal" title="Get Forecast">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="E8u-jR-Pdd" firstAttribute="leading" secondItem="CKx-dC-gmF" secondAttribute="leading" constant="16" id="2lk-FD-Hr8"/>
+                            <constraint firstItem="PvU-D9-wst" firstAttribute="leading" secondItem="uI5-hX-D4O" secondAttribute="leading" constant="16" id="7sg-Bw-FSj"/>
+                            <constraint firstItem="uI5-hX-D4O" firstAttribute="trailing" secondItem="PvU-D9-wst" secondAttribute="trailing" constant="16" id="CJ1-ks-lVw"/>
+                            <constraint firstAttribute="trailing" secondItem="E8u-jR-Pdd" secondAttribute="trailing" constant="16" id="DeQ-cy-ro8"/>
+                            <constraint firstItem="uI5-hX-D4O" firstAttribute="bottom" secondItem="PvU-D9-wst" secondAttribute="bottom" constant="16" id="HTM-d1-y4s"/>
+                            <constraint firstItem="E8u-jR-Pdd" firstAttribute="centerX" secondItem="CKx-dC-gmF" secondAttribute="centerX" id="ILQ-SW-s0D"/>
+                            <constraint firstItem="b5V-oR-yJb" firstAttribute="leading" secondItem="uI5-hX-D4O" secondAttribute="leading" constant="16" id="f0g-jK-kPh"/>
+                            <constraint firstItem="b5V-oR-yJb" firstAttribute="top" secondItem="uI5-hX-D4O" secondAttribute="top" constant="16" id="fdT-kA-r9f"/>
+                            <constraint firstItem="uI5-hX-D4O" firstAttribute="trailing" secondItem="b5V-oR-yJb" secondAttribute="trailing" constant="16" id="lDv-qF-hD0"/>
+                            <constraint firstItem="E8u-jR-Pdd" firstAttribute="centerY" secondItem="CKx-dC-gmF" secondAttribute="centerY" id="zEZ-qD-TvD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uI5-hX-D4O"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JA-qY-xyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767" y="135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9an-lO-2oG">
