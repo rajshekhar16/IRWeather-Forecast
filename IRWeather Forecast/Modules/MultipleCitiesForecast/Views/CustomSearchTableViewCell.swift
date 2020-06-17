@@ -22,6 +22,13 @@ class CustomSearchTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
 
+    var cityModel: CityModel? {
+        didSet {
+            cityLbl.text = cityModel?.name
+            countryLbl.text = cityModel?.country
+        }
+    }
+
     static var identifier: String {
         return String(describing: self)
     }

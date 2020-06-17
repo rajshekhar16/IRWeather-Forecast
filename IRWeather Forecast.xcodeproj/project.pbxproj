@@ -10,6 +10,7 @@
 		DC0283A7249A426300B831F9 /* city.list.min.json in Resources */ = {isa = PBXBuildFile; fileRef = DC0283A6249A426300B831F9 /* city.list.min.json */; };
 		DC55A82D249A57C3004B2FDA /* CustomSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A82B249A57C3004B2FDA /* CustomSearchTableViewCell.swift */; };
 		DC55A82E249A57C3004B2FDA /* CustomSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC55A82C249A57C3004B2FDA /* CustomSearchTableViewCell.xib */; };
+		DC55A832249A5D46004B2FDA /* CustomSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC55A831249A5D46004B2FDA /* CustomSearchTests.swift */; };
 		DC5C40CF2499ECDC00251BA9 /* DateUtilitiesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5C40CE2499ECDC00251BA9 /* DateUtilitiesTest.swift */; };
 		DC7B17CC249A3C0000DB1DBB /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B17CB249A3C0000DB1DBB /* CustomSearchTextField.swift */; };
 		DC7B17CF249A3EDC00DB1DBB /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7B17CE249A3EDC00DB1DBB /* SearchCityViewController.swift */; };
@@ -75,6 +76,7 @@
 		DC0283A6249A426300B831F9 /* city.list.min.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.min.json; sourceTree = "<group>"; };
 		DC55A82B249A57C3004B2FDA /* CustomSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTableViewCell.swift; sourceTree = "<group>"; };
 		DC55A82C249A57C3004B2FDA /* CustomSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSearchTableViewCell.xib; sourceTree = "<group>"; };
+		DC55A831249A5D46004B2FDA /* CustomSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTests.swift; sourceTree = "<group>"; };
 		DC5C40CE2499ECDC00251BA9 /* DateUtilitiesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilitiesTest.swift; sourceTree = "<group>"; };
 		DC7B17CB249A3C0000DB1DBB /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		DC7B17CE249A3EDC00DB1DBB /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC55A830249A5D29004B2FDA /* CustomSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC55A831249A5D46004B2FDA /* CustomSearchTests.swift */,
+			);
+			path = CustomSearchTests;
+			sourceTree = "<group>";
+		};
 		DC5C40CD2499ECB900251BA9 /* DateUtilitiesTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +289,7 @@
 		DCC86A4A2497E3AA00CBCF93 /* IRWeather ForecastTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC55A830249A5D29004B2FDA /* CustomSearchTests */,
 				DCF44E71249A05A40079E932 /* Forecast5Tests */,
 				DCF44E6A2499F6970079E932 /* Mocks */,
 				DC5C40CD2499ECB900251BA9 /* DateUtilitiesTest */,
@@ -583,6 +594,7 @@
 				DCF44E702499FA460079E932 /* UtilitiesTestCase.swift in Sources */,
 				DCF44E6C2499F6B80079E932 /* ForecastServiceMock.swift in Sources */,
 				DCC86A7D2497FAC200CBCF93 /* LocationMock.swift in Sources */,
+				DC55A832249A5D46004B2FDA /* CustomSearchTests.swift in Sources */,
 				DCC86A4C2497E3AA00CBCF93 /* IRWeather_ForecastTests.swift in Sources */,
 				DC5C40CF2499ECDC00251BA9 /* DateUtilitiesTest.swift in Sources */,
 				DCC86A832497FB7C00CBCF93 /* LocationProviderMock.swift in Sources */,

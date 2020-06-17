@@ -154,7 +154,14 @@
                                 <state key="normal" title="Get Forecast">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="forecastAction:" destination="4VL-cI-TfY" eventType="touchUpInside" id="2gg-nL-BhQ"/>
+                                </connections>
                             </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="s23-t4-dmA">
+                                <rect key="frame" x="0.0" y="116" width="414" height="650"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -164,17 +171,26 @@
                             <constraint firstAttribute="trailing" secondItem="E8u-jR-Pdd" secondAttribute="trailing" constant="16" id="DeQ-cy-ro8"/>
                             <constraint firstItem="uI5-hX-D4O" firstAttribute="bottom" secondItem="PvU-D9-wst" secondAttribute="bottom" constant="16" id="HTM-d1-y4s"/>
                             <constraint firstItem="E8u-jR-Pdd" firstAttribute="centerX" secondItem="CKx-dC-gmF" secondAttribute="centerX" id="ILQ-SW-s0D"/>
+                            <constraint firstItem="s23-t4-dmA" firstAttribute="leading" secondItem="uI5-hX-D4O" secondAttribute="leading" id="Sc7-mv-ZDk"/>
+                            <constraint firstItem="uI5-hX-D4O" firstAttribute="trailing" secondItem="s23-t4-dmA" secondAttribute="trailing" id="TEb-u5-e5u"/>
+                            <constraint firstItem="PvU-D9-wst" firstAttribute="top" secondItem="s23-t4-dmA" secondAttribute="bottom" constant="30" id="VG4-I6-Ybh"/>
                             <constraint firstItem="b5V-oR-yJb" firstAttribute="leading" secondItem="uI5-hX-D4O" secondAttribute="leading" constant="16" id="f0g-jK-kPh"/>
                             <constraint firstItem="b5V-oR-yJb" firstAttribute="top" secondItem="uI5-hX-D4O" secondAttribute="top" constant="16" id="fdT-kA-r9f"/>
                             <constraint firstItem="uI5-hX-D4O" firstAttribute="trailing" secondItem="b5V-oR-yJb" secondAttribute="trailing" constant="16" id="lDv-qF-hD0"/>
+                            <constraint firstItem="s23-t4-dmA" firstAttribute="top" secondItem="b5V-oR-yJb" secondAttribute="bottom" constant="16" id="yGx-wm-FLJ"/>
                             <constraint firstItem="E8u-jR-Pdd" firstAttribute="centerY" secondItem="CKx-dC-gmF" secondAttribute="centerY" id="zEZ-qD-TvD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uI5-hX-D4O"/>
                     </view>
+                    <connections>
+                        <outlet property="forecastButton" destination="PvU-D9-wst" id="lCU-Ok-ZVI"/>
+                        <outlet property="searchTextField" destination="b5V-oR-yJb" id="Ntj-LF-Swl"/>
+                        <outlet property="selectedCitiesTableView" destination="s23-t4-dmA" id="GjN-D6-Ooo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JA-qY-xyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="135"/>
+            <point key="canvasLocation" x="2766.666666666667" y="134.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9an-lO-2oG">

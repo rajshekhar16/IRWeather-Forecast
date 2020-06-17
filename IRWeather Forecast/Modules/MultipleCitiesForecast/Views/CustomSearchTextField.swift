@@ -8,11 +8,15 @@
 
 import UIKit
 
-class CustomSearchTextField: UITextField {
+protocol CustomSearchTextFieldDelegate: class {
+  func onCellSelected(selectedCityModel: CityModel)
+}
 
+class CustomSearchTextField: UITextField {
     var searchTableView: UITableView?
     var results: [CityModel] = []
     private var pendingRequestWorkItem: DispatchWorkItem?
+    weak var customDelegate: CustomSearchTextFieldDelegate?
 
     // Connecting the new element to the parent view
     open override func willMove(toWindow newWindow: UIWindow?) {
@@ -23,9 +27,6 @@ class CustomSearchTextField: UITextField {
     override open func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidChange), for: .editingChanged)
-        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidBeginEditing), for: .editingDidBegin)
-        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidEndEditing), for: .editingDidEnd)
-        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidEndEditingOnExit), for: .editingDidEndOnExit)
     }
 
     override open func layoutSubviews() {
@@ -43,18 +44,7 @@ class CustomSearchTextField: UITextField {
         filter()
     }
 
-    @objc open func textFieldDidBeginEditing() {
-        print("Begin Editing")
-    }
 
-    @objc open func textFieldDidEndEditing() {
-        print("End editing")
-
-    }
-
-    @objc open func textFieldDidEndEditingOnExit() {
-        print("End on Exit")
-    }
 
     // MARK: Filtering methods
     fileprivate func filter() {
@@ -95,7 +85,6 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
             tableHeight = tableView.contentSize.height
 
             // Set a bottom margin of 10p
-
             if tableView.contentSize.height > 200 {
                 tableHeight = 200
             } else {
@@ -117,7 +106,7 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
             tableView.separatorInset = UIEdgeInsets.zero
             tableView.layer.cornerRadius = 5.0
             tableView.separatorColor = UIColor.lightGray
-            tableView.backgroundColor = UIColor(red: 155/255, green: 232/255, blue: 255/255, alpha: 0.3)
+            tableView.backgroundColor = UIColor(red: 155/255, green: 232/255, blue: 255/255, alpha: 1.0)
 
             if self.isFirstResponder {
                 superview?.bringSubviewToFront(self)
@@ -130,14 +119,6 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
@@ -147,14 +128,17 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTableViewCell", for: indexPath) as? CustomSearchTableViewCell else {
             fatalError("Error in dequeing cell")
         }
-        cell.backgroundColor = UIColor.clear
-        cell.cityLbl?.text = results[indexPath.row].name
-        cell.countryLbl.text = results[indexPath.row].country
+        let cityModel = results[indexPath.row]
+        cell.backgroundColor = .clear
+        cell.cityModel = cityModel
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.isHidden = true
+        self.text = ""
         self.endEditing(true)
+        let cityModel = results[indexPath.row]
+        customDelegate?.onCellSelected(selectedCityModel: cityModel)
     }
 }

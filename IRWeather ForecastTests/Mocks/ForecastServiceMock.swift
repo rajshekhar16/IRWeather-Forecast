@@ -42,3 +42,4 @@ extension ForecastServiceMock: ForecastServiceProtocol {
     }
 }
 
+
