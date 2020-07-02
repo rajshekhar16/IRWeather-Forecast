@@ -39,8 +39,7 @@ extension UIImageView {
 }
 
 extension String {
-    func encodeUrl() -> String?
-    {
+    func encodeUrl() -> String? {
         // return self.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
         // Remove preexisting encoding,
         guard let decodedString = self.removingPercentEncoding,
@@ -53,9 +52,6 @@ extension String {
                 // Encoding failed
                 return nil
         }
-
         return "\(percentEncodedUrl)"
     }
 }
-
-

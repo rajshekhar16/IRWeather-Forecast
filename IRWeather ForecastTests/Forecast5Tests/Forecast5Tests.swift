@@ -81,21 +81,24 @@ class Forecast5Tests: XCTestCase {
     func test_tableViewHeader_ViewIsNotNil() {
         sut.forecastViewModel.fetchData()
         sut.setupTableView()
-        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView, viewForHeaderInSection: 0)
+        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView,
+                                                                     viewForHeaderInSection: 0)
         XCTAssertNotNil(headerView)
     }
 
     func test_tableViewHeader_ViewIsCurrentCityForecastHeaderCell() {
          sut.forecastViewModel.fetchData()
          sut.setupTableView()
-         let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView, viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
+         let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView,
+                                                                      viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
          XCTAssertNotNil(headerView)
      }
 
     func test_tableViewHeaderCell_rendersForecastOptionInCell() {
          sut.forecastViewModel.fetchData()
          sut.setupTableView()
-         let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView, viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
+         let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView,
+                                                                      viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
          XCTAssertNotNil(headerView)
         XCTAssertEqual(headerView?.dateLbl.text, "January 07")
         XCTAssertEqual(headerView?.dayLbl.text, "Tuesday")
@@ -104,7 +107,8 @@ class Forecast5Tests: XCTestCase {
     func test_tableViewHeaderCell_allOutletsAreResetInPrepareForeReuse() {
         sut.forecastViewModel.fetchData()
         sut.setupTableView()
-        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView, viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
+        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView,
+                                                                     viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
         XCTAssertNotNil(headerView)
         headerView?.prepareForReuse()
         XCTAssertNil(headerView?.dayLbl.text)
@@ -120,7 +124,8 @@ class Forecast5Tests: XCTestCase {
     func test_tableViewHeaderCell_dateVariableProperty() {
         sut.forecastViewModel.fetchData()
         sut.setupTableView()
-        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView, viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
+        let headerView = sut?.forecastTableView.delegate?.tableView?(sut!.forecastTableView,
+                                                                     viewForHeaderInSection: 0) as? CurrentCityForecastHeaderCell
         XCTAssertNotNil(headerView)
         headerView?.date = 1592386985
         XCTAssertNotNil(headerView?.date)
@@ -139,10 +144,7 @@ class Forecast5Tests: XCTestCase {
            sut?.forecastViewModel = ForecastViewModel(forecastService: forecastServiceMock, delegate: nil)
            let navigationController = UINavigationController()
            navigationController.viewControllers = [sut!]
-           let _ = sut!.view
+           _ = sut!.view
            return sut
        }
 }
-
-
-

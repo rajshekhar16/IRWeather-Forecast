@@ -44,8 +44,6 @@ class CustomSearchTextField: UITextField {
         filter()
     }
 
-
-
     // MARK: Filtering methods
     fileprivate func filter() {
         self.results.removeAll(keepingCapacity: true)
@@ -66,7 +64,8 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
     func buildSearchTableView() {
 
         if let tableView = searchTableView {
-            tableView.register(CustomSearchTableViewCell.nib, forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
+            tableView.register(CustomSearchTableViewCell.nib,
+                               forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
             tableView.delegate = self
             tableView.dataSource = self
             self.window?.addSubview(tableView)
@@ -125,7 +124,8 @@ extension CustomSearchTextField: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: TableViewDelegate methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTableViewCell", for: indexPath) as? CustomSearchTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTableViewCell",
+                                                       for: indexPath) as? CustomSearchTableViewCell else {
             fatalError("Error in dequeing cell")
         }
         let cityModel = results[indexPath.row]

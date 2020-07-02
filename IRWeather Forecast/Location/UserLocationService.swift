@@ -52,6 +52,4 @@ extension UserLocationService: CLLocationManagerDelegate {
             locationCompletionBlock?(nil, .canNotBeLocated)
         }
     }
-
-
 }

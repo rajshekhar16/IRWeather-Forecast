@@ -36,10 +36,8 @@ extension ForecastServiceMock: ForecastServiceProtocol {
             if let dataConversionObj = DataConversion(fileName: "Forecast5Mock", fileExtension: "json") {
                 let data = dataConversionObj.getDataFromFile()
                 let forecastResponse: Forecast5Response? = try? dataConversionObj.decodeData(data: data)
-                completionHandler(forecastResponse,  nil)
+                completionHandler(forecastResponse, nil)
             }
         }
     }
 }
-
-

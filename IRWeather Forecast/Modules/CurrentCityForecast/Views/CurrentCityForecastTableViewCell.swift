@@ -45,5 +45,4 @@ class CurrentCityForecastTableViewCell: UITableViewCell {
             weatherImg.loadThumbImageUsingCacheWithUrlString(presentableData?.weatherImgUrl ?? "")
         }
     }
-    
 }

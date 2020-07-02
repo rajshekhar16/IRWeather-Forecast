@@ -30,15 +30,17 @@ final class CitiesForecastViewModel {
             guard let self = self else { return }
             if let cityForecastResponse = cityForecastResponse {
                 for list in cityForecastResponse.list {
-                    let cityPresentableData = CitiesForecastPresentableData(cityName: list.name, maxTemp: "\(Int(round(list.main.tempMax)))", minTemp: "\(Int(round(list.main.tempMin)))", humidity:"\(list.main.humidity)", weather: list.weather.first?.description ?? "", weatherImgUrl: "\(imgUrlStr)\(list.weather.first?.icon ?? "").png", windSpeed: "\(list.wind.speed) mph")
+                    let cityPresentableData = CitiesForecastPresentableData(cityName: list.name,
+                                                                            maxTemp: "\(Int(round(list.main.tempMax)))",
+                        minTemp: "\(Int(round(list.main.tempMin)))",
+                        humidity: "\(list.main.humidity)",
+                        weather: list.weather.first?.description ?? "",
+                        weatherImgUrl: "\(imgUrlStr)\(list.weather.first?.icon ?? "").png",
+                        windSpeed: "\(list.wind.speed) mph")
                     self.presentableData.append(cityPresentableData)
                 }
                 self.delegate?.onFetchCompleted()
             }
-
-
         })
     }
-
 }
-

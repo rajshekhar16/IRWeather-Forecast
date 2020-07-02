@@ -9,12 +9,12 @@
 import Foundation
 
 class DataConversion {
-
+    
     private let fileName: String
     private let fileExtension: String
     private let bundle = Bundle.main
     private let path: String
-
+    
     init?(fileName: String, fileExtension: String) {
         if let path = bundle.path(forResource: fileName, ofType: "json") {
             self.path = path
@@ -24,29 +24,16 @@ class DataConversion {
             return nil
         }
     }
-
+    
     func getDataFromFile() -> Data? {
         return try? Data(contentsOf: URL(fileURLWithPath: self.path))
     }
 }
 
 extension DataConversion {
-
     func decodeData<T: Decodable>(data: Data?) throws -> T {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try decoder.decode(T.self, from: data!)
     }
 }
-
-
-
-
-
-//DispatchQueue.main.async {
-//         let myStruct = try? JSONDecoder().decode([CityModel].self, from: json!) // decoding our data
-//         let array = myStruct?.filter({ (cityModel) -> Bool in
-//             return cityModel.name.contains("Ne")
-//         })
-//         print(array)
-//     }

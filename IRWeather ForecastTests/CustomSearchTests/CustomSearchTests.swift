@@ -73,7 +73,8 @@ class CustomSearchTests: XCTestCase {
         sut.searchTextField.textFieldDidChange()
         sut.searchTextField.layoutSubviews()
         let indexPath = IndexPath(row: 0, section: 0)
-        sut?.searchTextField.searchTableView!.delegate?.tableView?(sut!.searchTextField.searchTableView!, didSelectRowAt: indexPath)
+        sut?.searchTextField.searchTableView!.delegate?.tableView?(sut!.searchTextField.searchTableView!,
+                                                                   didSelectRowAt: indexPath)
             XCTAssertEqual(sut.searchTextField.searchTableView?.isHidden, true)
 
     }
@@ -84,7 +85,8 @@ class CustomSearchTests: XCTestCase {
          sut.searchTextField.textFieldDidChange()
          sut.searchTextField.layoutSubviews()
          let indexPath = IndexPath(row: 0, section: 0)
-         sut?.searchTextField.searchTableView!.delegate?.tableView?(sut!.searchTextField.searchTableView!, didSelectRowAt: indexPath)
+         sut?.searchTextField.searchTableView!.delegate?.tableView?(sut!.searchTextField.searchTableView!,
+                                                                    didSelectRowAt: indexPath)
              XCTAssertEqual(sut.searchTextField.text?.isEmpty, true)
 
      }
@@ -141,8 +143,7 @@ class CustomSearchTests: XCTestCase {
         let sut = storyboard.instantiateViewController(withIdentifier: "SearchCityViewController") as? SearchCityViewController
         let navigationController = UINavigationController()
         navigationController.viewControllers = [sut!]
-        let _ = sut!.view
+        _ = sut!.view
         return sut
     }
-
 }

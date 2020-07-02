@@ -35,14 +35,20 @@ class LandingPageViewController: UIViewController {
     }
     
     @IBAction func curretnCityAction(_ sender: Any) {
-        let currentCityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentCityForecastViewController") as! CurrentCityForecastViewController
-        self.navigationController?.pushViewController(currentCityViewController, animated: true)
-
+        guard let currentCityForecastViewController = UIStoryboard(name: "Main",
+                                                           bundle: nil)
+            .instantiateViewController(withIdentifier: "CurrentCityForecastViewController") as? CurrentCityForecastViewController else {
+            fatalError("Unable to instantiate CurrentCityForecastViewController")
+        }
+        self.navigationController?.pushViewController(currentCityForecastViewController, animated: true)
     }
+
     @IBAction func multipleCityAction(_ sender: Any) {
-        let currentCityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SearchCityViewController") as! SearchCityViewController
-        self.navigationController?.pushViewController(currentCityViewController, animated: true)
+        guard let searchCityViewController = UIStoryboard(name: "Main",
+                                                          bundle: nil)
+            .instantiateViewController(withIdentifier: "SearchCityViewController") as? SearchCityViewController else {
+                fatalError("Unable to instantiate SearchCityViewController")
+        }
+        self.navigationController?.pushViewController(searchCityViewController, animated: true)
     }
-
 }
-

@@ -10,7 +10,7 @@ import Foundation
 @testable import IRWeather_Forecast
 
 struct UserLocationMock: UserLocation {
-    func fetchCity(completion: @escaping (String?, Error?) -> ()) {
+    func fetchCity(completion: @escaping (String?, Error?) -> Void) {
         completion("Bengaluru", nil)
     }
 

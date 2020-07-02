@@ -10,19 +10,18 @@ import UIKit
 
 class IRBorderButton: UIButton {
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        //setTheme(theme: CovidWarrierViewThemeConstants.covidTableViewTheme)
-    }
-
     var shadowAdded: Bool = false
 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     @IBInspectable var cornerRadius: CGFloat = 0 {
-           didSet {
-               layer.cornerRadius = cornerRadius
-               layer.masksToBounds = cornerRadius > 0
-           }
-       }
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
+    }
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -32,5 +31,3 @@ class IRBorderButton: UIButton {
         self.layer.masksToBounds = true
     }
 }
-
-

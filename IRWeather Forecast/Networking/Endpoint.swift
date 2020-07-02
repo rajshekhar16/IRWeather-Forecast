@@ -25,11 +25,10 @@ protocol Endpoint {
     var method: HttpMethod { get }
 }
 
-
 enum HttpMethod: String {
-    case GET = "GET"
-    case DELETE = "DELETE"
-    case POST = "POST"
-    case PUT = "PUT"
-    case PATCH = "PATCH"
+    case GET
+    case DELETE
+    case POST
+    case PUT
+    case PATCH
 }

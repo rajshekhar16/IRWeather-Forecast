@@ -28,7 +28,7 @@ class IRWeather_ForecastTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             if let navigationContoller = UIApplication.shared.windows.first,
                 let topViewController = navigationContoller.rootViewController?.children.first {
-                XCTAssertTrue(topViewController.isKind(of:  CurrentCityForecastViewController.self))
+                XCTAssertTrue(topViewController.isKind(of: CurrentCityForecastViewController.self))
             }
         }
     }
@@ -38,7 +38,7 @@ class IRWeather_ForecastTests: XCTestCase {
           DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
               if let navigationContoller = UIApplication.shared.windows.first,
                   let topViewController = navigationContoller.rootViewController?.children.first {
-                  XCTAssertTrue(topViewController.isKind(of:  SearchCityViewController.self))
+                  XCTAssertTrue(topViewController.isKind(of: SearchCityViewController.self))
               }
           }
       }
@@ -50,7 +50,7 @@ class IRWeather_ForecastTests: XCTestCase {
        let sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? LandingPageViewController
        let navigationController = UINavigationController()
        navigationController.viewControllers = [sut!]
-       let _ = sut!.view
+       _ = sut!.view
        return sut
    }
 

@@ -38,7 +38,4 @@ class DateUtilitiesTest: XCTestCase {
         let currentTime = sut.time
         XCTAssertEqual(currentTime, "11:48 AM")
     }
-
-
-
 }

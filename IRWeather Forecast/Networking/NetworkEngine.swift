@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkEngineProtocol {
-    func request<T: Decodable>(completion: @escaping (Result<T, Error>) -> ())
+    func request<T: Decodable>(completion: @escaping (Result<T, Error>) -> Void)
 }
 
 class NetworkEngine: NetworkEngineProtocol {
@@ -30,7 +30,7 @@ class NetworkEngine: NetworkEngineProtocol {
     /// - Parameters:
     ///   - endpoint: the endpoint to make the HTTP request against
     ///   - completion: the JSON response converted to the provided codable object. If successful, or fialure otherwise
-    func request<T>(completion: @escaping (Result<T, Error>) -> ()) where T : Decodable {
+    func request<T>(completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
         var components = URLComponents()
         components.scheme = endpoint.scheme
         components.host = endpoint.baseURL
@@ -57,15 +57,13 @@ class NetworkEngine: NetworkEngineProtocol {
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let responseObject = try decoder.decode(T.self, from: data)
                     completion(.success(responseObject))
-                }
-                catch {
-                    let error = NSError(domain: "", code: 200, userInfo: [NSLocalizedDescriptionKey : "response"])
+                } catch {
+                    let error = NSError(domain: "", code: 200, userInfo: [NSLocalizedDescriptionKey: "response"])
                     completion(.failure(error))
                     print(error)
                 }
             }
         }
         task.resume()
-
     }
 }

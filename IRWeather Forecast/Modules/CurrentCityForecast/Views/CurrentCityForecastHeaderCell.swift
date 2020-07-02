@@ -38,5 +38,4 @@ class CurrentCityForecastHeaderCell: UITableViewCell {
             dateLbl.text = dateUtilities?.shortDate
         }
     }
-    
 }

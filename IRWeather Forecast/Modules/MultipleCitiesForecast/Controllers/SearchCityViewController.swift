@@ -15,7 +15,7 @@ class SearchCityViewController: UIViewController {
     @IBOutlet weak var selectedCitiesTableView: UITableView!
     private var rightBarButtonItem = UIBarButtonItem()
     var selectedCitiesArr: [CityModel] = [] {
-        didSet  {
+        didSet {
             let arrCount = selectedCitiesArr.count
             if arrCount > 0 {
                 navigationItem.rightBarButtonItem?.isEnabled = true
@@ -62,7 +62,8 @@ class SearchCityViewController: UIViewController {
         self.title = "Search Cities"
         rightBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetTapped))
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        selectedCitiesTableView.register(CustomSearchTableViewCell.nib, forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
+        selectedCitiesTableView.register(CustomSearchTableViewCell.nib,
+                                         forCellReuseIdentifier: CustomSearchTableViewCell.identifier)
         navigationItem.rightBarButtonItem?.isEnabled = false
 
     }
@@ -72,7 +73,11 @@ class SearchCityViewController: UIViewController {
     }
 
     @IBAction func forecastAction(_ sender: Any) {
-        let citiesForecastViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CitiesForecastViewController") as! CitiesForecastViewController
+        guard let citiesForecastViewController = UIStoryboard(name: "Main",
+                                                        bundle: nil)
+            .instantiateViewController(withIdentifier: "CitiesForecastViewController") as? CitiesForecastViewController else {
+                fatalError("Unable to instantiate CitiesForecastViewController")
+        }
         let citiesId = self.selectedCitiesArr.map { (cityModel) -> String in
             String(cityModel.id)
         }
@@ -101,7 +106,8 @@ extension SearchCityViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTableViewCell", for: indexPath) as? CustomSearchTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTableViewCell",
+                                                       for: indexPath) as? CustomSearchTableViewCell else {
             fatalError("Error in dequeing cell")
         }
         let cityModel = selectedCitiesArr[indexPath.row]

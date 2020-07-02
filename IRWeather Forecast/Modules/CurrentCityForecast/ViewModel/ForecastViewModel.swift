@@ -37,7 +37,7 @@ final class ForecastViewModel {
                 for value in values {
                     var date: DateUtilities? = DateUtilities(dateInDouble: value.dt)
                     var presentableData: ForecastPresentableData? = ForecastPresentableData(shortDate: date?.shortDate ?? "",
-                                                                                            day:  date?.day ?? "",
+                                                                                            day: date?.day ?? "",
                                                                                             time: date?.time,
                                                                                             temp: "\(Int(round(value.main.temp)))",
                         humidity: "\(value.main.humidity)",
@@ -56,8 +56,8 @@ final class ForecastViewModel {
         })
     }
 
-    func groupData(weatherData: [ListData]) -> [String : [ListData]] {
-        let data = Dictionary<String, [ListData]>(grouping: weatherData, by: {
+    func groupData(weatherData: [ListData]) -> [String: [ListData]] {
+        let data = [String: [ListData]](grouping: weatherData, by: {
             let isoDate = $0.dt
             let date = Date(timeIntervalSince1970: isoDate)
             let formatDate = DateFormatter()

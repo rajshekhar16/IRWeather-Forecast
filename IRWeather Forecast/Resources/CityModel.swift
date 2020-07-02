@@ -13,5 +13,3 @@ struct CityModel: Decodable {
     var name: String
     var country: String
 }
-
-

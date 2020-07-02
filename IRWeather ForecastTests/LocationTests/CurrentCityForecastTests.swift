@@ -58,10 +58,7 @@ class CurrentCityForecastTests: XCTestCase {
         sut?.locationProvider = locationProvider
         let navigationController = UINavigationController()
         navigationController.viewControllers = [sut!]
-        let _ = sut!.view
+        _ = sut!.view
         return sut
     }
-
-
-
 }

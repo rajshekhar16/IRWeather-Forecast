@@ -53,8 +53,10 @@ class CurrentCityForecastViewController: UIViewController {
     }
 
     func setupTableView() {
-        forecastTableView.register(CurrentCityForecastTableViewCell.nib, forCellReuseIdentifier: CurrentCityForecastTableViewCell.identifier)
-        forecastTableView.register(CurrentCityForecastHeaderCell.nib, forCellReuseIdentifier: CurrentCityForecastHeaderCell.identifier)
+        forecastTableView.register(CurrentCityForecastTableViewCell.nib,
+                                   forCellReuseIdentifier: CurrentCityForecastTableViewCell.identifier)
+        forecastTableView.register(CurrentCityForecastHeaderCell.nib,
+                                   forCellReuseIdentifier: CurrentCityForecastHeaderCell.identifier)
         forecastTableView.isHidden = true
         forecastTableView.dataSource = self
         forecastTableView.delegate = self
@@ -101,11 +103,12 @@ extension CurrentCityForecastViewController: UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrentCityForecastTableViewCell.identifier, for: indexPath) as? CurrentCityForecastTableViewCell else {
+        guard let currentCityTableViewCell = tableView.dequeueReusableCell(withIdentifier: CurrentCityForecastTableViewCell.identifier,
+                                                                for: indexPath) as? CurrentCityForecastTableViewCell else {
             fatalError("Unable to dequeue cell")
         }
-        tableViewCell.presentableData = forecastViewModel.presentableData[indexPath.section][indexPath.row]
-        return tableViewCell
+        currentCityTableViewCell.presentableData = forecastViewModel.presentableData[indexPath.section][indexPath.row]
+        return currentCityTableViewCell
     }
 
 }
