@@ -13,7 +13,7 @@ protocol ForecastServiceProtocol {
 }
 
 struct ForecastService: ForecastServiceProtocol {
-    let networkEngine: NetworkEngine
+    let networkEngine: NetworkEngineProtocol
 
     func fetchForecastDataForFiveDays(completionHandler: @escaping (Forecast5Response?, String?) -> Void) {
         networkEngine.request { (result: Result<Forecast5Response, Error>) in

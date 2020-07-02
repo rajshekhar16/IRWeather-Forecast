@@ -15,7 +15,7 @@ protocol CitiesServiceProtocol {
 }
 
 struct CitiesForecastService: CitiesServiceProtocol {
-    let networkEngine: NetworkEngine
+    let networkEngine: NetworkEngineProtocol
     func fetchForecastForMultipleCities(completionHandler: @escaping (CitiesForecastResponse?, String?) -> Void) {
         networkEngine.request { (result: Result<CitiesForecastResponse, Error>) in
             switch result {

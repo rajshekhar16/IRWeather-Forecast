@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkEngineProtocol {
-    func request<T: Codable>(completion: @escaping (Result<T, Error>) -> ())
+    func request<T: Decodable>(completion: @escaping (Result<T, Error>) -> ())
 }
 
 class NetworkEngine: NetworkEngineProtocol {
